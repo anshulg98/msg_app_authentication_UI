@@ -43,7 +43,7 @@ const SignUp =(props) => {
     }
   }
     return (
-      <form onSubmit ={handleSubmit}>
+      <form onSubmit ={handleSubmit} className="auth-inner">
         <h3>Sign Up</h3>
         <div className="mb-3">
           <label>Name</label>

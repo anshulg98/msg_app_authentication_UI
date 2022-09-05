@@ -50,7 +50,7 @@ import { useNavigate } from 'react-router-dom'
   }
 
     return (
-      <form onSubmit ={handleSubmit} value={msg}>
+      <form onSubmit ={handleSubmit} value={msg} className="auth-inner">
         <h3>LogIn</h3>
         <div className="mb-3">
           <label>Enter username</label>

@@ -103,7 +103,7 @@
   color: #d1d1d1;
 }
 .content__footer {
-  position:relative;
+  position:absolute;
   bottom: 50px;
   width: 55%;
   padding-top: 40px;

@@ -1,5 +1,9 @@
-import React, { Component, useState} from 'react'
+import React, { Component, useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
  const Login =(props)=> {
   const [user, setuser] = useState('');
   const [pass, setpass] = useState('');
@@ -8,6 +12,7 @@ import { useNavigate } from 'react-router-dom'
   // const onChangeHandle=(e)=>{
   //   setCredentials({...credentials, [e.target.name]: e.target.value})
   // }
+  useEffect(()=>{    if(localStorage.getItem('accessToken')){      navigate('/chat')    }},[])
   const handleSubmit = async (e)=>{
    try { 
     e.preventDefault();
@@ -23,7 +28,7 @@ import { useNavigate } from 'react-router-dom'
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-            },body: JSON.stringify({username: user, password: pass})
+            },body: JSON.stringify({username: user.toLowerCase(), password: pass})
           });
           //console.log("hello1")
           const json = await resp.json()
@@ -33,18 +38,21 @@ import { useNavigate } from 'react-router-dom'
           //let { accessToken, refreshToken } = res.data;
       localStorage.setItem("accessToken", json.accessToken);
       localStorage.setItem("refreshToken", json.refreshToken);
-      alert("Logged in")
+      //alert("Logged in")
+    //  toast("Logged in")
       navigate("/chat")
     }
       
       
       else {
-        alert('Wrong Credentials')
+      //  alert('Wrong Credentials')
+      toast("Wrong Credentials")
       }
       console.log(resp)}
       catch (error) {
         console.error("error");
-        alert ("something went wrong!Please try again")
+      //  alert ("something went wrong!Please try again")
+      toast("something went wrong!Please try again")
 
       }
   }
@@ -71,17 +79,20 @@ import { useNavigate } from 'react-router-dom'
           />
         </div>
         
-        <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
+        <div >
+          <center>
+          <button type="submit" className="login-btn">
             Submit
           </button>
+          </center>
+          <ToastContainer />
         </div>
-        <p className="forgot-password text-right">
-          Forgot <a href="#">password?</a>
-        </p>
+        
+        <center>
         <p className="sign-up text-left">
           Don't have an account?<a href="/sign-up">Sign up</a>
         </p>
+        </center>
       </form>
     )
   }

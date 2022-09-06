@@ -54,6 +54,9 @@ export default class ChatContent extends Component {
 
   render() {
     return (
+      
+      
+      
       <div className="main__chatcontent">
         <div className="content__header">
           <div className="blocks">
@@ -63,6 +66,7 @@ export default class ChatContent extends Component {
                 image={this.state.currentTarget.image}
               />
               <p>{this.state.currentTarget.name}</p>
+              
             </div>
           </div>
 
@@ -106,9 +110,12 @@ export default class ChatContent extends Component {
             <button className="btnSendMsg" id="sendMsgBtn">
               <i className="fa fa-paper-plane"></i>
             </button>
+            
           </div>
         </div>
+        
       </div>
+      
     );
   }
 }

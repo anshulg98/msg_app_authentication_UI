@@ -35,8 +35,16 @@ import './chat.css'
   // })
   return(
     <div className="__main">
-        <ChatBody />    
+        <ChatBody />  
+        <div >
+          <center>
+        <button type="submit" className="logoutbutton" onClick={handleClick}>
+           Logout
+      </button>  
+      </center>
+        </div>
   </div>
+  
   )
 }
 

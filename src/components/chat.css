@@ -12,16 +12,95 @@
     align-items: center;
     height: 100%;
   }
+
+  .signup-btn{
+
+    display: inline-block;
+
+background-color: rgb(69, 69, 243);
+
+border-radius: 10px;
+
+        border: 2px double #252424;
+
+        color: #eeeeee;
+
+        text-align: center;
+
+        font-size: 18px;
+
+        padding: 5px;
+
+        width: 200px;
+
+        margin: 5px;
+
+  }
+
+  .login-btn{
+
+    display: inline-block;
+
+background-color:rgb(69, 69, 243);
+
+border-radius: 10px;
+
+        border: 2px double #302f2f;
+
+        color: #eeeeee;
+
+        text-align: center;
+
+        font-size: 18px;
+
+        padding: 4px;
+
+        width: 200px;
+
+        margin: 5px;
+
+  }
+
+  .logoutbutton{
+
+    display: inline-block;
+
+background-color: rgb(235, 234, 241);
+
+border-radius: 10px;
+
+        border: 2px double #0b0b0b;
+
+        color:#191818;
+
+        text-align: center;
+
+        font-size: 15px;
+
+        padding: 4px;
+        padding-top: -100px;
+
+        padding-right: -50px;
+
+        width: 100px;
+
+        margin: 10px;
+        
+
+
+
+  }
   .__main {
     max-width: 90%;
     margin: auto;
-    background-color: #fff;
+    /* background-color: #fff; */
     min-height: 80vh;
     width: 100%;
     border-radius: 10px;
     padding: 0px;
     display: flex;
     padding-top: 30px;
+    
   }
   
   .btn {
@@ -63,6 +142,7 @@
   ::-webkit-scrollbar {
     width: 5px;
   }
+
   
   /* Track */
   ::-webkit-scrollbar-track {
